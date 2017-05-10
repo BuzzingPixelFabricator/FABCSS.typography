@@ -1,6 +1,6 @@
 {
     "name": "fabcss.typography",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Fabricator code styling",
     "homepage": "https://github.com/BuzzingPixelFabricator/FABCSS.typography",
     "bugs": "https://github.com/BuzzingPixelFabricator/FABCSS.typography/issues",
@@ -19,6 +19,11 @@
     "fabricatorCssBuild": {
         "files": [
             "src/FABCSS.typography.less"
+        ]
+    },
+    "fabricatorScssBuild": {
+        "files": [
+            "src/FABCSS.typography.scss"
         ]
     }
 }

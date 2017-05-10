@@ -1,0 +1,218 @@
+/*----------------------------------------------------------------------------*\
+    # Copyright 2017, BuzzingPixel, LLC
+
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the Apache License 2.0.
+    # http://www.apache.org/licenses/LICENSE-2.0
+\*----------------------------------------------------------------------------*/
+
+
+/**
+ * Variables
+ */
+$linkOutline: 'no-change' !default;
+$linkColor: blue !default;
+$linkDecoration: underline !default;
+$linkColorHover: darken($linkColor, 10%) !default;
+$linkDecorationHover: $linkDecoration !default;
+$linkColorActive: darken($linkColor, 20%) !default;
+
+$headingColor: #000 !default;
+$headingFont: Tahoma, Geneva, sans-serif !default;
+$headingFontWeight: bold !default;
+$headingLineHeight: 1.4em !default;
+$headingMarginBottom: 20px !default;
+
+$headingLevel1FontSize: 36px !default;
+$headingLevel2FontSize: 32px !default;
+$headingLevel3FontSize: 28px !default;
+$headingLevel4FontSize: 24px !default;
+$headingLevel5FontSize: 20px !default;
+$headingLevel6FontSize: 16px !default;
+
+$baseFontSize: 16px !default;
+$paragraphColor: lighten(#000, 25%) !default;
+$paragraphFontSize: $baseFontSize !default;
+$paragraphFontWeight: normal !default;
+$paragraphLineHeight: 1.3em !default;
+$paragraphMarginBottom: 20px !default;
+
+$smallFontSize: .8em !default;
+
+$quoteColor: $paragraphColor !default;
+$quoteFont: Georgia, Times, serif !default;
+$quoteFontSize: false !default;
+$quoteFontWeight: normal !default;
+$quoteLineHeight: $paragraphLineHeight !default;
+$quoteFontStyle: normal !default;
+$quotePaddingHorizontal: 2em !default;
+$quotePaddingVertical: 1em !default;
+$quoteMarginBottom: $paragraphMarginBottom !default;
+$quoteBorderLeft: false !default;
+$quoteBorderLeftColor: $quoteColor !default;
+
+$citeColor: lighten(#000, 65%) !default;
+$citeFont: $quoteFont !default;
+$citeFontSize: false !default;
+$citeFontWeight: $quoteFontWeight !default;
+$citeLineHeight: $quoteLineHeight !default;
+$citeFontStyle: $quoteFontStyle !default;
+$citeMarginTop: 14px !default;
+$citeIndicator: '\2014\00a0';
+
+
+/*
+ * Links
+ */
+a,
+.link {
+    color: $linkColor;
+    cursor: pointer;
+    text-decoration: $linkDecoration;
+
+    @if $linkOutline != 'no-change' {
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &:hover {
+        color: $linkColorHover;
+
+        @if $linkDecorationHover != false {
+            text-decoration: $linkDecorationHover;
+        }
+    }
+
+    &:active {
+        color: $linkColorActive;
+    }
+
+    img {
+        border: 0;
+    }
+}
+
+
+/**
+ * Headings
+ */
+.heading {
+    color: $headingColor;
+    font-family: $headingFont;
+    font-weight: $headingFontWeight;
+    line-height: $headingLineHeight;
+    margin-bottom: $headingMarginBottom;
+}
+.heading--display-inline-block {
+    display: inline-block;
+}
+.heading--level-1 {
+    font-size: $headingLevel1FontSize;
+}
+.heading--level-2 {
+    font-size: $headingLevel2FontSize;
+}
+.heading--level-3 {
+    font-size: $headingLevel3FontSize;
+}
+.heading--level-4 {
+    font-size: $headingLevel4FontSize;
+}
+.heading--level-5 {
+    font-size: $headingLevel5FontSize;
+}
+.heading--level-6 {
+    font-size: $headingLevel6FontSize;
+}
+
+
+/**
+ * Paragraphs
+ */
+p,
+.paragraph-typography {
+    color: $paragraphColor;
+    font-size: $paragraphFontSize;
+    font-weight: $paragraphFontWeight;
+    line-height: $paragraphLineHeight;
+}
+p {
+    margin-bottom: $paragraphMarginBottom;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+
+/**
+ * Small
+ */
+small {
+    font-size: $smallFontSize;
+}
+
+
+/**
+ * Italics
+ */
+dfn,
+em,
+i,
+var {
+    font-style: italic;
+}
+
+
+/**
+ * Quotes
+ */
+blockquote,
+q {
+    color: $quoteColor;
+    font-family: $quoteFont;
+    font-style: $quoteFontStyle;
+    font-weight: $quoteFontWeight;
+    line-height: $quoteLineHeight;
+
+    @if $quoteFontSize {
+        font-size: $quoteFontSize;
+    }
+
+    @if $quoteBorderLeft {
+        border-left: 1px solid $quoteBorderLeft;
+    }
+
+    cite {
+        color: $citeColor;
+        font-family: $quoteFont;
+        font-style: $citeFontStyle;
+        font-weight: $citeFontWeight;
+        line-height: $citeLineHeight;
+        margin-top: $citeMarginTop;
+
+        @if $citeFontSize {
+            font-size: $citeFontSize;
+        }
+
+        &:before {
+            content: $citeIndicator;
+        }
+    }
+
+    p {
+        color: $quoteColor;
+    }
+}
+
+blockquote {
+    margin-bottom: $quoteMarginBottom;
+    padding-bottom: $quotePaddingVertical;
+    padding-left: $quotePaddingHorizontal;
+    padding-right: $quotePaddingHorizontal;
+    padding-top: $quotePaddingVertical;
+
+    cite {
+        display: block;
+    }
+}

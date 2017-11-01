@@ -1,0 +1,249 @@
+/*----------------------------------------------------------------------------*\
+    # Copyright 2017, BuzzingPixel, LLC
+
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the Apache License 2.0.
+    # http://www.apache.org/licenses/LICENSE-2.0
+\*----------------------------------------------------------------------------*/
+
+/**
+ * Variables
+ */
+:root {
+    --linkOutline: auto;
+    --linkColor: blue;
+    --linkDecoration: underline;
+    --linkColorHover: #0000cc;
+    --linkDecorationHover: var(--linkDecoration);
+    --linkColorActive: #000099;
+
+    --headingColor: #000;
+    --headingFont: Tahoma, Geneva, sans-serif;
+    --headingFontWeight: bold;
+    --headingLineHeight: 1.4em;
+    --headingMarginBottom: 20px;
+
+    --headingLevel1FontSize: 36px;
+    --headingLevel2FontSize: 32px;
+    --headingLevel3FontSize: 28px;
+    --headingLevel4FontSize: 24px;
+    --headingLevel5FontSize: 20px;
+    --headingLevel6FontSize: 16px;
+
+    --baseFontSize: 16px;
+    --paragraphColor: #404040;
+    --paragraphFontSize: var(--baseFontSize);
+    --paragraphFontWeight: normal;
+    --paragraphLineHeight: 1.3em;
+    --paragraphMarginBottom: 20px;
+
+    --smallFontSize: 0.8em;
+
+    --quoteColor: var(--paragraphColor);
+    --quoteFont: Georgia, Times, serif;
+    --quoteFontSize: false;
+    --quoteFontWeight: normal;
+    --quoteLineHeight: var(--paragraphLineHeight);
+    --quoteFontStyle: normal;
+    --quotePaddingHorizontal: 2em;
+    --quotePaddingVertical: 1em;
+    --quoteMarginBottom: var(--paragraphMarginBottom);
+    --quoteBorderLeft: 0;
+    --quoteBorderLeftColor: var(--quoteColor);
+
+    --citeColor: #a6a6a6;
+    --citeFont: var(--quoteFont);
+    --citeFontSize: false;
+    --citeFontWeight: var(--quoteFontWeight);
+    --citeLineHeight: var(--quoteLineHeight);
+    --citeFontStyle: var(--quoteFontStyle);
+    --citeMarginTop: 14px;
+    --citeIndicator: '\2014\00a0';
+}
+
+/*
+ * Links
+ */
+a,
+.link {
+    color: var(--linkColor);
+    cursor: pointer;
+    text-decoration: var(--linkDecoration);
+}
+
+a:focus,
+.link:focus {
+    outline: var(--linkOutline);
+}
+
+a:hover,
+.link:hover {
+    color: var(--linkColorHover);
+    text-decoration: var(--linkDecorationHover);
+}
+
+a:active,
+.link:active {
+    color: var(--linkColorActive);
+}
+
+a img,
+.link img {
+    border: 0;
+}
+
+/**
+ * Headings
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    color: var(--headingColor);
+    font-family: var(--headingFont);
+    font-weight: var(--headingFontWeight);
+    line-height: var(--headingLineHeight);
+    margin-bottom: var(--headingMarginBottom);
+}
+
+.heading--display-inline-block {
+    display: inline-block;
+}
+
+h1,
+.heading--level-1 {
+    font-size: var(--headingLevel1FontSize);
+}
+
+h2,
+.heading--level-2 {
+    font-size: var(--headingLevel2FontSize);
+}
+
+h3,
+.heading--level-3 {
+    font-size: var(--headingLevel3FontSize);
+}
+
+h4,
+.heading--level-4 {
+    font-size: var(--headingLevel4FontSize);
+}
+
+h5,
+.heading--level-5 {
+    font-size: var(--headingLevel5FontSize);
+}
+
+h6,
+.heading--level-6 {
+    font-size: var(--headingLevel6FontSize);
+}
+
+/**
+ * Paragraphs
+ */
+p,
+.paragraph,
+.paragraph-typography {
+    color: var(--paragraphColor);
+    font-size: var(--paragraphFontSize);
+    font-weight: var(--paragraphFontWeight);
+    line-height: var(--paragraphLineHeight);
+}
+
+p,
+.paragraph {
+    margin-bottom: var(--paragraphMarginBottom);
+}
+
+p:last-child,
+.paragraph:last-child {
+    margin-bottom: 0;
+}
+
+
+/**
+ * Small
+ */
+small {
+    font-size: var(--smallFontSize);
+}
+
+/**
+ * Italics
+ */
+dfn,
+em,
+i,
+var {
+    font-style: italic;
+}
+
+
+/**
+ * Quotes
+ */
+q,
+blockquote,
+.blockquote {
+    border-left: 1px solid var(--quoteBorderLeft);
+    color: var(--quoteColor);
+    font-family: var(--quoteFont);
+    font-size: var(--quoteFontSize);
+    font-style: var(--quoteFontStyle);
+    font-weight: var(--quoteFontWeight);
+    line-height: var(--quoteLineHeight);
+}
+
+q cite,
+q .cite,
+blockquote cite,
+blockquote .cite,
+.blockquote cite,
+.blockquote .cite {
+    font-size: var(--citeFontSize);
+    color: var(--citeColor);
+    font-family: var(--quoteFont);
+    font-style: var(--citeFontStyle);
+    font-weight: var(--citeFontWeight);
+    line-height: var(--citeLineHeight);
+    margin-top: var(--citeMarginTop);
+}
+
+q cite:before,
+q .cite:before,
+blockquote cite:before,
+blockquote .cite:before,
+.blockquote cite:before,
+.blockquote .cite:before {
+    content: var(--citeIndicator);
+}
+
+q p,
+q .paragraph,
+blockquote p,
+blockquote .paragraph,
+.blockquote p,
+.blockquote .paragraph {
+    color: var(--quoteColor);
+}
+
+blockquote,
+.blockquote {
+    margin-bottom: var(--quoteMarginBottom);
+    padding-bottom: var(--quotePaddingVertical);
+    padding-left: var(--quotePaddingHorizontal);
+    padding-right: var(--quotePaddingHorizontal);
+    padding-top: var(--quotePaddingVertical);
+}
+
+blockquote cite,
+blockquote .cite,
+.blockquote cite,
+.blockquote .cite {
+    display: block;
+}
